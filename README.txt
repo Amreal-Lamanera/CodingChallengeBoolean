@@ -1,5 +1,5 @@
 Coding Challenge per l'ammissione in boolean.
-Il file index.html contiene lo svolgimento del progetto con un piccolo extra che ho voluto realizzare per rengere almeno i pulsanti funzionanti.
+Il file index.html contiene lo svolgimento del progetto con un piccolo extra che ho voluto realizzare per rendere almeno i pulsanti funzionanti.
 Il file index2.html contiene lo svolgimento del progetto in cui però ho voluto sfidare me stesso nel cercare di rendere la pagina web ancor più realistica.
 style.css contiene lo stile della pagina web e vale per entrambi gli index.
 Nella cartella img ci sono le immagini utilizzate nella pagina web.
