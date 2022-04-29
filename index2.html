@@ -1,0 +1,86 @@
+<!-- Coding Challenge per l'ammissione in boolean -->
+<!-- Cos'è index2? Ho voluto sfidare me stesso nel cercare di rendere la pagina web ancor più realistica. Ho lasciato i commenti presenti anche in index e ne ho aggiunti di nuovi nelle parti diverse; inoltre qua ho messo la parte script in un file javascript a parte e l'ho chiamato tramite url con il tag src -->
+<!-- L'esercizio chiede di replicare una pagina web con html e css -->
+<!-- Analizzando lo screenshot della suddetta pagina web deduco che il codice sarà organizzato nei seguenti blocchi:
+- un div esterno (container) che conterrà tutto il resto
+-un header per il logo
+- un nav contenente i pulsanti
+-un main formato da 3 sezioni che saranno le possibili scelte che un ipotetico "consumatore" andrà a selezionare. -->
+
+<!-- Essendo il progetto limitato all'uso di html e css, quindi solo "esteticamente funzionale" la scelta e il click su uno dei pulsanti non saranno collegate e non porteranno a niente. Ho comunque deciso di cercarmi un piccolo script sul web per dare un "alert" al click dei pulsanti, giusto per avere qualcosa a schermo. -->
+
+<!-- Un ultima premaessa è che ho deciso di modificare leggermente la pagina web cercando di interpretarne le funzionalità, nel dettaglio:
+- utilizzerò degli input "radio" al posto dei "checkbox", con l'obbligo di selezionarne uno dei 3, immaginando che nell'atto della prenotazione non si possa prenotare più di un monopattino con un singolo account;
+- prenota sarà un submit collegato a questa scelta;
+- immaginandomi che una volta prenotato un monopattino la schermata cambierà, rendendomi impossibile la prenotazione di un ulteriore mezzo, "termina prenotazione" sarà un button, così come "accendi luci", collegati al monopattino che ho prenotato;
+- ovviamente se facessi termina o accendi luci senza prima aver prenotato qualcosa dovrei ricevere un messaggio di errore. -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LIM</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Implemento il font Ubuntu che andrò ad utilizzare in tutto il documento -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- In questa versione non utilizzo form perché "Prenota" sarà un button e non un submit così che non debba ricaricare la pagina o passare ad un'altra -->
+
+      <!-- Uso class e non id perché in futuro potrei volerlo riutilizzare  -->
+      <div class="container">
+
+        <header>
+          <img src="img/logo.png" alt="LOGO">
+          <!-- Utilizzo il tag h1 per la scritta sotto al logo sia perché è un tag blocco che va a capo, sia perché semanticamente la vedo come il "titolo" della pagina -->
+          <h1>Taking Booleaners from A to B</h1>
+        </header>
+
+        <nav>
+          <!-- Il nav sarà composto da un div contenente 1 submit e 2 button come dichiarato nelle premesse -->
+
+          <!-- Uso un id questa volta perché immagino che non mi servirà mai riutilizzarlo o crearne ulteriori di questo tipo essendo il "menù di navigazione" -->
+          <div id="buttonsContainer">
+            <input type="button" onclick="prenota()" id="prenota" value="Prenota">
+            <input type="button" onclick="termina()" value="Termina Prenotazione">
+            <input type="button" onclick="luci()" id="luci" value="Accendi Luci">
+          </div>
+        </nav>
+
+        <main>
+          <section>
+            <input type="radio" name="monopattino" required>
+            <h2>Monopattino Gino22</h2>
+            <span>
+              &#10236; Via Guadalametri - a 220 metri da te
+            </span>
+            <span>Stato carica:</span>
+            <div class="midCharge"></div>
+          </section>
+
+          <section>
+            <input type="radio" name="monopattino" required>
+            <h2>Monopattino Mike24</h2>
+            <span>
+              &#10236; Via Ricciardoni - a 420 metri da te
+            </span>
+            <span>Stato carica:</span>
+            <div class="maxCharge"></div>
+          </section>
+
+          <section>
+            <input type="radio" name="monopattino" required>
+            <h2>Monopattino Fede154</h2>
+            <span>
+              &#10236; Via Mentarini - a 490 metri da te
+            </span>
+            <span>Stato carica:</span>
+            <div class="lowCharge"></div>
+          </section>
+        </main>
+      </div>
+    <!-- La parte javascript che ho implementato - l'ho inserita come ultimo tag all'interno del body perché ho letto su w3school che rende le pagine web più veloci da caricare rispetto che a metterla in cima o nel head-->
+    <script src = "js/script.js"></script>
+  </body>
+</html>

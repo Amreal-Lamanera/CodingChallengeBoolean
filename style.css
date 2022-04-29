@@ -1,0 +1,117 @@
+/*
+Border-box serve per mantenere le dimensioni dei box prefissate senza sommare eventuali margin e padding.
+Utilizzo font ubunto per tutto il documento.
+Tolgo tutti i margini che hanno i tag di default.
+*/
+
+*{
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+}
+
+/* Imposto lo sfondo della pagina tramite il body */
+
+body{
+  background-image: url(img/background.jpg);
+  background-size: cover;
+  /* Ho scelto di non utilizzare: background-repeat: no-repeat; preferendo il ripetersi dell'immagine piuttosto che uno spazio bianco nel caso la pagina web venga aperta con proporzioni diverse da quelle dell'immagine, ad esempio con un'altezza maggiore della larghezza  */
+}
+
+.container{
+  width: 60%;
+  height: 90%;
+  /* border: solid black; */
+  border-radius: 1%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, .5);
+  /* Rendo il div fisso e centrale qualsiasi sia la dimensione della pagina web e attivo lo scrolling al suo interno nel caso di uno zoom troppo elevato che non mi faccia vedere gli elementi presenti */
+  position: fixed;
+  left: 20%;
+  top: 5%;
+  overflow-y: auto;
+  /* Centro un po' tutti i contenuti del container */
+  padding: 0 5%;
+}
+
+
+/* Centro il contenuto dell'header */
+header{
+  text-align: center;
+  margin: 3%;
+}
+
+/* Utilizzo un selettore avanzato per modificare le dimenzioni del logo e del titolo - non utilizzo classi perché immagino che queste due componenti rimarranno uniche */
+header img{
+  width: 200px;
+}
+
+header h1{
+  color: #00DD00;
+}
+
+/* Creo la barra verde contenete i pulsanti - utilizzo comunque un selettore avanzato per una questione di leggibilità */
+nav #buttonsContainer{
+  background-color: #00DD00;
+  text-align: center;
+  padding: 1%;
+}
+
+/* abbellisco i pulsanti, utilizzo i solettori avanzati così che se in futuro aggiungessi ulteriori pulsanti, siano essi submit o button, riceverebbero lo stile */
+nav input , nav button{
+  color: white;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  margin-right: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+ /* modifico estetica pulsanti al passaggio del mouse sopra di essi */
+nav input:hover , nav button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* do un margine a tutte le sezioni contenute in main */
+main section{
+  margin: 3% 0;
+}
+
+/* modifico lo stile degli h2 e degli span che sono parenti di section */
+section h2{
+  display: inline-block;
+  color: white;
+}
+
+section span{
+  /* trasformo gli span parenti di section in blocchi così che ognuno occupi una riga */
+  display: block;
+  color: white;
+  margin: 5px;
+}
+
+/* Creo le "barre di status carica" media, massima e minima */
+.midCharge{
+  background-color: orange;
+  width: 30%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.maxCharge{
+  background-color: green;
+  width: 60%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.lowCharge{
+  background-color: red;
+  width: 15%;
+  height: 25px;
+  border-radius: 5px;
+}
